@@ -39,7 +39,7 @@ logo_html = f"""
 # -------------------------
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
@@ -52,6 +52,8 @@ html, body, [class*="css"] {
 
 .main .block-container {
     color: #1f1f1f !important;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
 
 p, li, label, div, span, input, textarea {
@@ -74,7 +76,7 @@ section[data-testid="stSidebar"] * {
 .hero-box {
     background: linear-gradient(135deg, #0B3D2E 0%, #14523f 100%);
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 22px;
     color: #F5F1E8 !important;
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     margin-bottom: 25px;
@@ -87,20 +89,66 @@ section[data-testid="stSidebar"] * {
 .info-card {
     background-color: #FFFFFF;
     color: #1f1f1f !important;
-    padding: 24px;
-    border-radius: 18px;
+    padding: 28px;
+    border-radius: 22px;
     box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
-    border-left: 6px solid #0B3D2E;
+    margin-bottom: 22px;
+    border-left: 7px solid #0B3D2E;
 }
 
 .small-card {
     background-color: #FFFFFF;
     color: #1f1f1f !important;
-    padding: 18px;
-    border-radius: 16px;
+    padding: 24px;
+    border-radius: 20px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    border-left: 7px solid #0B3D2E;
+}
+
+.resume-card {
+    background-color: #FFFFFF;
+    color: #1f1f1f !important;
+    padding: 26px;
+    border-radius: 20px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.resume-top {
+    background: linear-gradient(135deg, #0B3D2E 0%, #14523f 100%);
+    color: #F5F1E8 !important;
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    margin-bottom: 20px;
+}
+
+.resume-top h2, .resume-top h3, .resume-top p {
+    color: #F5F1E8 !important;
+    margin-bottom: 0.35rem;
+}
+
+.resume-item {
+    background-color: #F9F8F4;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 14px;
+    border-left: 5px solid #0B3D2E;
+}
+
+.resume-item-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    color: #0B3D2E !important;
+}
+
+.resume-section-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2rem;
+    color: #0B3D2E !important;
+    margin-bottom: 14px;
 }
 
 .contact-box {
@@ -130,18 +178,27 @@ section[data-testid="stSidebar"] * {
 
 .stButton > button,
 .stDownloadButton > button {
-    background-color: #0B3D2E;
-    color: #F5F1E8 !important;
-    border-radius: 10px;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    font-weight: 600;
+    background-color: #0B3D2E !important;
+    color: #FFFFFF !important;
+    border-radius: 12px !important;
+    border: none !important;
+    padding: 0.7rem 1.3rem !important;
+    font-weight: 700 !important;
+}
+
+.stButton > button *,
+.stDownloadButton > button * {
+    color: #FFFFFF !important;
 }
 
 .stButton > button:hover,
 .stDownloadButton > button:hover {
-    background-color: #14523f;
-    color: #F5F1E8 !important;
+    background-color: #14523f !important;
+    color: #FFFFFF !important;
+}
+
+ul {
+    margin-top: 0.5rem;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -226,30 +283,25 @@ elif page == "About Me":
 
     st.markdown('<div class="info-card">', unsafe_allow_html=True)
     st.write(
-        "My name is Easton, and I am a 21-year-old from Cairo, Nebraska. "
-        "I attended high school at Centura Public Schools, where I graduated third in my class "
-        "and earned all-state academic honors. After high school, I was accepted to the University "
-        "of Nebraska–Lincoln, where I originally pursued architecture. While I enjoyed parts of that "
-        "field, I realized it was not the right long-term path for me."
+        "My name is Easton, and I am a 21-year-old from Cairo, Nebraska. I attended high school at Centura Public Schools, "
+        "where I graduated third in my class and earned all-state academic honors. After high school, I was accepted to the "
+        "University of Nebraska–Lincoln, where I originally pursued architecture. While I enjoyed parts of that field, I realized "
+        "it was not the right long-term path for me."
     )
     st.write(
-        "Since the spring of 2024, I have been a part of the PGA Golf Management program at the "
-        "University of Nebraska–Lincoln. Golf has always been a major part of my life, and I have "
-        "especially developed a strong passion for understanding and teaching the golf swing. Being "
-        "able to turn that passion into a career is something I truly enjoy, and it motivates me to "
-        "keep learning and growing within the industry."
+        "Since the spring of 2024, I have been a part of the PGA Golf Management program at the University of Nebraska–Lincoln. "
+        "Golf has always been a major part of my life, and I have especially developed a strong passion for understanding and teaching "
+        "the golf swing. Being able to turn that passion into a career is something I truly enjoy, and it motivates me to keep learning "
+        "and growing within the industry."
     )
     st.write(
-        "I have gained experience at a wide range of golf facilities, from small-town public courses "
-        "to large-scale country clubs. Through those opportunities, I have worked with people of all "
-        "ages and skill levels, helping them improve their game and enjoy the sport more. Those "
-        "experiences have strengthened my communication skills, my professionalism, and my ability to "
-        "connect with others."
+        "I have gained experience at a wide range of golf facilities, from small-town public courses to large-scale country clubs. "
+        "Through those opportunities, I have worked with people of all ages and skill levels, helping them improve their game and enjoy "
+        "the sport more. Those experiences have strengthened my communication skills, my professionalism, and my ability to connect with others."
     )
     st.write(
-        "Looking ahead, I hope my passion and talents lead me to opportunities across the country "
-        "where I can continue building relationships, expanding my knowledge of the game, and making "
-        "lifelong connections through my career in golf."
+        "Looking ahead, I hope my passion and talents lead me to opportunities across the country where I can continue building relationships, "
+        "expanding my knowledge of the game, and making lifelong connections through my career in golf."
     )
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -303,21 +355,19 @@ elif page == "Portfolio":
     """, unsafe_allow_html=True)
 
     st.markdown('<div class="info-card">', unsafe_allow_html=True)
-    st.subheader("Additional Professional Experience")
-
+    st.markdown("### Additional Professional Experience")
     st.markdown("**Cairo Watering Hole – Bartender**")
     st.markdown("- Developed hospitality and service skills in a fast-paced environment")
     st.markdown("- Learned to stay composed under pressure while delivering strong customer experiences")
-
+    st.markdown("")
     st.markdown("**Dick’s Sporting Goods – Golf Associate**")
     st.markdown("- Worked directly with customers to provide tailored product recommendations")
     st.markdown("- Built experience in retail professionalism, teamwork, and customer communication")
-
+    st.markdown("")
     st.markdown("**Spring City – Shift Lead**")
     st.markdown("- Led employees during manager absences")
     st.markdown("- Managed customer-facing responsibilities and closing duties")
     st.markdown("- Built leadership, accountability, and team management experience")
-
     st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("""
@@ -339,54 +389,92 @@ elif page == "Resume":
     st.header("Resume")
 
     st.markdown("""
-    <div class="info-card">
-        <h3>Easton Brand</h3>
+    <div class="resume-top">
+        <h2>Easton Brand</h2>
+        <p>PGA Golf Management Student</p>
         <p>easton.brand3214@gmail.com | (308) 379-8091 | Lincoln, NE 68503</p>
     </div>
     """, unsafe_allow_html=True)
 
-    st.subheader("Professional Summary")
+    st.markdown('<div class="resume-card">', unsafe_allow_html=True)
+    st.markdown('<div class="resume-section-title">Professional Summary</div>', unsafe_allow_html=True)
     st.write(
         "Proactive student with strong academic, communication, and leadership skills. "
         "Eager to bring value to an organization through hard work, professionalism, and a commitment to quality."
     )
+    st.markdown("</div>", unsafe_allow_html=True)
 
-    st.subheader("Work Experience")
+    st.markdown('<div class="resume-card">', unsafe_allow_html=True)
+    st.markdown('<div class="resume-section-title">Work Experience</div>', unsafe_allow_html=True)
 
-    st.markdown("**Seasonal Intern | Centura Hills Golf Club – Cairo, NE | 05/2024 - 08/2024**")
-    st.markdown("- Assisted the course’s head professional with lessons and tournaments")
-    st.markdown("- Gained valuable experience working with the course maintenance crew")
-    st.markdown("- Maintained a high level of professionalism with members and guests")
-    st.markdown("- Additional bartending experience")
+    st.markdown("""
+    <div class="resume-item">
+        <div class="resume-item-title">Seasonal Intern | Centura Hills Golf Club – Cairo, NE | 05/2024 - 08/2024</div>
+        <ul>
+            <li>Assisted the course’s head professional with lessons and tournaments</li>
+            <li>Gained valuable experience working with the course maintenance crew</li>
+            <li>Maintained a high level of professionalism with members and guests</li>
+            <li>Additional bartending experience</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.markdown("**Bartender | Cairo Watering Hole – Cairo, NE | 05/2024 - 08/2024**")
-    st.markdown("- Gained valuable hospitality skills")
-    st.markdown("- Built bartending experience under pressure")
+    st.markdown("""
+    <div class="resume-item">
+        <div class="resume-item-title">Bartender | Cairo Watering Hole – Cairo, NE | 05/2024 - 08/2024</div>
+        <ul>
+            <li>Gained valuable hospitality skills</li>
+            <li>Built bartending experience under pressure</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.markdown("**Golf Associate | Dick’s Sporting Goods – Grand Island, NE | 05/2023 - 08/2023**")
-    st.markdown("- Cross-trained within all departments")
-    st.markdown("- Demonstrated professionalism in customer service and team support")
-    st.markdown("- Created a customized experience for each customer")
-    st.markdown("- Cashiering experience")
+    st.markdown("""
+    <div class="resume-item">
+        <div class="resume-item-title">Golf Associate | Dick’s Sporting Goods – Grand Island, NE | 05/2023 - 08/2023</div>
+        <ul>
+            <li>Cross-trained within all departments</li>
+            <li>Demonstrated professionalism in customer service and team support</li>
+            <li>Created a customized experience for each customer</li>
+            <li>Cashiering experience</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.markdown("**Shift Lead | Spring City – Grand Island, NE | 10/2021 - 04/2023**")
-    st.markdown("- Took charge of a dozen employees in manager absences")
-    st.markdown("- Built strong customer service skills at the reception desk")
-    st.markdown("- Helped cook and maintain cleanliness of the cafe")
-    st.markdown("- Maintained a positive attitude with younger customers")
-    st.markdown("- Responsible for handling cash drawers and deposits on closing shifts")
+    st.markdown("""
+    <div class="resume-item">
+        <div class="resume-item-title">Shift Lead | Spring City – Grand Island, NE | 10/2021 - 04/2023</div>
+        <ul>
+            <li>Took charge of a dozen employees in manager absences</li>
+            <li>Built strong customer service skills at the reception desk</li>
+            <li>Helped cook and maintain cleanliness of the cafe</li>
+            <li>Maintained a positive attitude with younger customers</li>
+            <li>Responsible for handling cash drawers and deposits on closing shifts</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.subheader("Education")
-    st.markdown("- Graduate of Centura Public Schools with a 4.0 GPA and a 31 ACT score")
-    st.markdown("- Currently enrolled at the University of Nebraska–Lincoln majoring in PGA Management")
+    st.markdown("</div>", unsafe_allow_html=True)
 
-    st.subheader("Affiliations & Achievements")
-    st.markdown("- Honor Roll")
-    st.markdown("- High School Athletics")
-    st.markdown("- FBLA member – 3 years")
-    st.markdown("- FBLA officer – 1 year")
-    st.markdown("- Regents Scholarship")
-    st.markdown("- PGAM Student")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown('<div class="resume-card">', unsafe_allow_html=True)
+        st.markdown('<div class="resume-section-title">Education</div>', unsafe_allow_html=True)
+        st.markdown("- Graduate of Centura Public Schools with a 4.0 GPA and a 31 ACT score")
+        st.markdown("- Currently enrolled at the University of Nebraska–Lincoln majoring in PGA Management")
+        st.markdown("</div>", unsafe_allow_html=True)
+
+    with col2:
+        st.markdown('<div class="resume-card">', unsafe_allow_html=True)
+        st.markdown('<div class="resume-section-title">Affiliations & Achievements</div>', unsafe_allow_html=True)
+        st.markdown("- Honor Roll")
+        st.markdown("- High School Athletics")
+        st.markdown("- FBLA member – 3 years")
+        st.markdown("- FBLA officer – 1 year")
+        st.markdown("- Regents Scholarship")
+        st.markdown("- PGAM Student")
+        st.markdown("</div>", unsafe_allow_html=True)
 
     try:
         with open("resume.pdf", "rb") as file:
@@ -397,7 +485,7 @@ elif page == "Resume":
                 mime="application/pdf"
             )
     except FileNotFoundError:
-        st.info("If you want the PDF download button to work, upload your file and name it resume.pdf")
+        st.info("Upload your PDF and name it resume.pdf to enable the download button.")
 
 # -------------------------
 # CONTACT
