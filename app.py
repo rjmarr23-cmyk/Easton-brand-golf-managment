@@ -10,14 +10,15 @@ st.set_page_config(
 # -------------------------
 # BUILT-IN EB GOLF LOGO
 # -------------------------
+import streamlit as st
+import base64
+
 logo_svg = """
 <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
   <rect width="240" height="240" rx="34" fill="#0B3D2E"/>
 
-  <!-- Circle -->
   <circle cx="120" cy="105" r="72" fill="none" stroke="#F5F1E8" stroke-width="6"/>
 
-  <!-- B (bold + cleaner) -->
   <path d="M85 70 H130 
            Q155 70 155 95 
            Q155 115 130 120 
@@ -30,7 +31,6 @@ logo_svg = """
         stroke-linecap="round"
         stroke-linejoin="round"/>
 
-  <!-- E (strong vertical + spacing) -->
   <path d="M95 70 V165
            M95 70 H140
            M95 118 H130
@@ -40,12 +40,10 @@ logo_svg = """
         stroke-width="10"
         stroke-linecap="round"/>
 
-  <!-- Flag (slightly thinner so EB stands out) -->
   <path d="M175 55 V130" stroke="#F5F1E8" stroke-width="4"/>
   <path d="M175 55 L190 65 L175 75 Z" fill="#F5F1E8"/>
   <circle cx="175" cy="145" r="5" fill="#F5F1E8"/>
 
-  <!-- Text -->
   <text x="120" y="205" text-anchor="middle"
         font-size="16"
         font-family="Georgia, serif"
@@ -54,6 +52,14 @@ logo_svg = """
         EASTON BRAND
   </text>
 </svg>
+"""
+
+logo_b64 = base64.b64encode(logo_svg.encode("utf-8")).decode("utf-8")
+
+logo_html = f"""
+<div style="display:flex; justify-content:center; margin-bottom:18px; margin-top:5px;">
+    <img src="data:image/svg+xml;base64,{logo_b64}" width="210">
+</div>
 """
 
 # -------------------------
