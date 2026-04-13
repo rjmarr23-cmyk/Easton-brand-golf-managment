@@ -338,7 +338,7 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-      st.markdown("""
+    st.markdown("""
         <div class="info-card">
         <h3>Additional Professional Experience</h3>
 
