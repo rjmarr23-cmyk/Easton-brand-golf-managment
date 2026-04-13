@@ -17,7 +17,7 @@ logo_svg = """
 <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
 
   <!-- Background -->
-  <rect width="240" height="240" rx="34" fill="#000000"/>
+  <rect width="240" height="240" rx="34" fill="#0B3D2E"/>
 
   <!-- Circle -->
   <circle cx="120" cy="105" r="72" fill="none" stroke="#FFFFFF" stroke-width="6"/>
@@ -35,24 +35,24 @@ logo_svg = """
         stroke-linecap="round"
         stroke-linejoin="round"/>
 
-  <!-- E (light golf green) -->
-  <path d="M95 70 V165
-           M95 70 H140
-           M95 118 H130
-           M95 165 H140"
+  <!-- E (moved left + bright green) -->
+  <path d="M80 70 V165
+           M80 70 H135
+           M80 118 H125
+           M80 165 H135"
         fill="none"
-        stroke="#6BCB77"
+        stroke="#00C800"
         stroke-width="10"
         stroke-linecap="round"/>
 
-  <!-- Flag pole (white) -->
+  <!-- Flag pole -->
   <path d="M175 55 V130" stroke="#FFFFFF" stroke-width="4"/>
 
-  <!-- Flag (red) -->
+  <!-- Flag -->
   <path d="M175 55 L190 65 L175 75 Z" fill="#E63946"/>
 
-  <!-- Ball (white) -->
-  <circle cx="175" cy="145" r="5" fill="#FFFFFF"/>
+  <!-- Ball (black with white rim) -->
+  <circle cx="175" cy="145" r="5" fill="#000000" stroke="#FFFFFF" stroke-width="2"/>
 
   <!-- Text -->
   <text x="120" y="205" text-anchor="middle"
