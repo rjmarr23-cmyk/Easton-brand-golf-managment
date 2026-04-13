@@ -15,10 +15,14 @@ import base64
 
 logo_svg = """
 <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-  <rect width="240" height="240" rx="34" fill="#0B3D2E"/>
 
-  <circle cx="120" cy="105" r="72" fill="none" stroke="#F5F1E8" stroke-width="6"/>
+  <!-- Background -->
+  <rect width="240" height="240" rx="34" fill="#000000"/>
 
+  <!-- Circle -->
+  <circle cx="120" cy="105" r="72" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+
+  <!-- B (white) -->
   <path d="M85 70 H130 
            Q155 70 155 95 
            Q155 115 130 120 
@@ -26,31 +30,39 @@ logo_svg = """
            Q150 165 125 165 
            H85 Z"
         fill="none"
-        stroke="#F5F1E8"
+        stroke="#FFFFFF"
         stroke-width="10"
         stroke-linecap="round"
         stroke-linejoin="round"/>
 
+  <!-- E (light golf green) -->
   <path d="M95 70 V165
            M95 70 H140
            M95 118 H130
            M95 165 H140"
         fill="none"
-        stroke="#F5F1E8"
+        stroke="#6BCB77"
         stroke-width="10"
         stroke-linecap="round"/>
 
-  <path d="M175 55 V130" stroke="#F5F1E8" stroke-width="4"/>
-  <path d="M175 55 L190 65 L175 75 Z" fill="#F5F1E8"/>
-  <circle cx="175" cy="145" r="5" fill="#F5F1E8"/>
+  <!-- Flag pole (white) -->
+  <path d="M175 55 V130" stroke="#FFFFFF" stroke-width="4"/>
 
+  <!-- Flag (red) -->
+  <path d="M175 55 L190 65 L175 75 Z" fill="#E63946"/>
+
+  <!-- Ball (white) -->
+  <circle cx="175" cy="145" r="5" fill="#FFFFFF"/>
+
+  <!-- Text -->
   <text x="120" y="205" text-anchor="middle"
         font-size="16"
         font-family="Georgia, serif"
-        fill="#F5F1E8"
+        fill="#FFFFFF"
         letter-spacing="1.5">
         EASTON BRAND
   </text>
+
 </svg>
 """
 
