@@ -338,22 +338,26 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown('<div class="info-card">', unsafe_allow_html=True)
-    st.markdown("### Additional Professional Experience")
-    st.markdown("**Cairo Watering Hole – Bartender**")
-    st.markdown("- Developed hospitality and service skills in a fast-paced environment")
-    st.markdown("- Learned to stay composed under pressure while delivering strong customer experiences")
-    st.markdown("")
-    st.markdown("**Dick’s Sporting Goods – Golf Associate**")
-    st.markdown("- Worked directly with customers to provide tailored product recommendations")
-    st.markdown("- Built experience in retail professionalism, teamwork, and customer communication")
-    st.markdown("")
-    st.markdown("**Spring City – Shift Lead**")
-    st.markdown("- Led employees during manager absences")
-    st.markdown("- Managed customer-facing responsibilities and closing duties")
-    st.markdown("- Built leadership, accountability, and team management experience")
-    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("""
+<div class="info-card">
+    <h3>Additional Professional Experience</h3>
 
+    <strong>Cairo Watering Hole – Bartender</strong><br>
+    • Developed hospitality and service skills in a fast-paced environment<br>
+    • Learned to stay composed under pressure while delivering strong customer experiences
+    <br><br>
+
+    <strong>Dick’s Sporting Goods – Golf Associate</strong><br>
+    • Worked directly with customers to provide tailored product recommendations<br>
+    • Built experience in retail professionalism, teamwork, and customer communication
+    <br><br>
+
+    <strong>Spring City – Shift Lead</strong><br>
+    • Led employees during manager absences<br>
+    • Managed customer-facing responsibilities and closing duties<br>
+    • Built leadership, accountability, and team management experience
+</div>
+""", unsafe_allow_html=True)
     st.markdown("""
     <div class="small-card">
         <h3>What These Experiences Show</h3>
