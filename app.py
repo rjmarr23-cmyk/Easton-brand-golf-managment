@@ -540,18 +540,4 @@ elif page == "Contact":
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("### Send a Message")
-    name = st.text_input("Name")
-    email = st.text_input("Email")
-    message = st.text_area("Message")
-
-    if st.button("Send Message"):
-        if name and email and message:
-            st.success("Thank you for reaching out. This demo form is for display purposes only.")
-        else:
-            st.error("Please fill out all fields before submitting.")
-
-    st.markdown("---")
-    st.markdown("### Professional Links")
-    st.markdown("- LinkedIn: add your link here")
-    st.markdown("- GitHub: add your link here")
+   
