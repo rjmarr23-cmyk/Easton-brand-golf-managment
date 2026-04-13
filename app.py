@@ -29,7 +29,7 @@ logo_svg = """
 
 logo_b64 = base64.b64encode(logo_svg.encode("utf-8")).decode("utf-8")
 logo_html = f"""
-<div style="display:flex; justify-content:center; margin-bottom:18px; margin-top:5px;">
+<div style="display:flex; justify-content:center; margin-bottom: 18px; margin-top: 5px;">
     <img src="data:image/svg+xml;base64,{logo_b64}" width="210">
 </div>
 """
@@ -54,7 +54,6 @@ html, body, [class*="css"] {
     color: #1f1f1f !important;
     padding-top: 2rem;
     padding-bottom: 3rem;
-    max-width: 1200px;
 }
 
 p, li, label, div, span, input, textarea {
@@ -171,17 +170,6 @@ section[data-testid="stSidebar"] * {
     font-size: 0.95rem;
 }
 
-.info-card p, .info-card li, .small-card p, .resume-card li, .resume-item li, .contact-box p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 0.6rem;
-}
-
-.info-card ul, .resume-card ul, .resume-item ul {
-    padding-left: 1.3rem;
-    margin-top: 0.4rem;
-}
-
 .stTextInput input, .stTextArea textarea {
     background-color: #FFFFFF !important;
     color: #1f1f1f !important;
@@ -214,15 +202,6 @@ ul {
 }
 </style>
 """, unsafe_allow_html=True)
-
-# -------------------------
-# HELPERS
-# -------------------------
-def open_card(card_class="info-card"):
-    st.markdown(f'<div class="{card_class}">', unsafe_allow_html=True)
-
-def close_card():
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # -------------------------
 # SIDEBAR
@@ -302,28 +281,29 @@ elif page == "About Me":
     st.markdown(logo_html, unsafe_allow_html=True)
     st.header("About Me")
 
-    open_card("info-card")
+    st.markdown('<div class="info-card">', unsafe_allow_html=True)
     st.write(
         "My name is Easton, and I am a 21-year-old from Cairo, Nebraska. I attended high school at Centura Public Schools, "
-        "where I graduated third in my class and earned all-state academic honors."
-    )
-    st.write(
-        "After high school, I was accepted to the University of Nebraska–Lincoln, where I originally pursued architecture. "
-        "While I enjoyed parts of that field, I realized it was not the right long-term path for me."
+        "where I graduated third in my class and earned all-state academic honors. After high school, I was accepted to the "
+        "University of Nebraska–Lincoln, where I originally pursued architecture. While I enjoyed parts of that field, I realized "
+        "it was not the right long-term path for me."
     )
     st.write(
         "Since the spring of 2024, I have been a part of the PGA Golf Management program at the University of Nebraska–Lincoln. "
-        "Golf has always been a major part of my life, and I have especially developed a strong passion for understanding and teaching the golf swing."
+        "Golf has always been a major part of my life, and I have especially developed a strong passion for understanding and teaching "
+        "the golf swing. Being able to turn that passion into a career is something I truly enjoy, and it motivates me to keep learning "
+        "and growing within the industry."
     )
     st.write(
         "I have gained experience at a wide range of golf facilities, from small-town public courses to large-scale country clubs. "
-        "Through those opportunities, I have worked with people of all ages and skill levels, helping them improve their game and enjoy the sport more."
+        "Through those opportunities, I have worked with people of all ages and skill levels, helping them improve their game and enjoy "
+        "the sport more. Those experiences have strengthened my communication skills, my professionalism, and my ability to connect with others."
     )
     st.write(
         "Looking ahead, I hope my passion and talents lead me to opportunities across the country where I can continue building relationships, "
         "expanding my knowledge of the game, and making lifelong connections through my career in golf."
     )
-    close_card()
+    st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("""
     <div class="small-card">
@@ -374,22 +354,21 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-    open_card("info-card")
-    st.subheader("Additional Professional Experience")
-
+    st.markdown('<div class="info-card">', unsafe_allow_html=True)
+    st.markdown("### Additional Professional Experience")
     st.markdown("**Cairo Watering Hole – Bartender**")
     st.markdown("- Developed hospitality and service skills in a fast-paced environment")
     st.markdown("- Learned to stay composed under pressure while delivering strong customer experiences")
-
+    st.markdown("")
     st.markdown("**Dick’s Sporting Goods – Golf Associate**")
     st.markdown("- Worked directly with customers to provide tailored product recommendations")
     st.markdown("- Built experience in retail professionalism, teamwork, and customer communication")
-
+    st.markdown("")
     st.markdown("**Spring City – Shift Lead**")
     st.markdown("- Led employees during manager absences")
     st.markdown("- Managed customer-facing responsibilities and closing duties")
     st.markdown("- Built leadership, accountability, and team management experience")
-    close_card()
+    st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("""
     <div class="small-card">
@@ -417,75 +396,77 @@ elif page == "Resume":
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown('<div class="resume-card">', unsafe_allow_html=True)
+    st.markdown('<div class="resume-section-title">Professional Summary</div>', unsafe_allow_html=True)
+    st.write(
+        "Proactive student with strong academic, communication, and leadership skills. "
+        "Eager to bring value to an organization through hard work, professionalism, and a commitment to quality."
+    )
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    st.markdown('<div class="resume-card">', unsafe_allow_html=True)
+    st.markdown('<div class="resume-section-title">Work Experience</div>', unsafe_allow_html=True)
+
     st.markdown("""
-    <div class="resume-card">
-        <div class="resume-section-title">Professional Summary</div>
-        <p>
-            Proactive student with strong academic, communication, and leadership skills.
-            Eager to bring value to an organization through hard work, professionalism, and a commitment to quality.
-        </p>
+    <div class="resume-item">
+        <div class="resume-item-title">Seasonal Intern | Centura Hills Golf Club – Cairo, NE | 05/2024 - 08/2024</div>
+        <ul>
+            <li>Assisted the course’s head professional with lessons and tournaments</li>
+            <li>Gained valuable experience working with the course maintenance crew</li>
+            <li>Maintained a high level of professionalism with members and guests</li>
+            <li>Additional bartending experience</li>
+        </ul>
     </div>
     """, unsafe_allow_html=True)
 
-    open_card("resume-card")
-    st.markdown('<div class="resume-section-title">Work Experience</div>', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="resume-item">
+        <div class="resume-item-title">Bartender | Cairo Watering Hole – Cairo, NE | 05/2024 - 08/2024</div>
+        <ul>
+            <li>Gained valuable hospitality skills</li>
+            <li>Built bartending experience under pressure</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
-    for title, bullets in [
-        (
-            "Seasonal Intern | Centura Hills Golf Club – Cairo, NE | 05/2024 - 08/2024",
-            [
-                "Assisted the course’s head professional with lessons and tournaments",
-                "Gained valuable experience working with the course maintenance crew",
-                "Maintained a high level of professionalism with members and guests",
-                "Additional bartending experience"
-            ]
-        ),
-        (
-            "Bartender | Cairo Watering Hole – Cairo, NE | 05/2024 - 08/2024",
-            [
-                "Gained valuable hospitality skills",
-                "Built bartending experience under pressure"
-            ]
-        ),
-        (
-            "Golf Associate | Dick’s Sporting Goods – Grand Island, NE | 05/2023 - 08/2023",
-            [
-                "Cross-trained within all departments",
-                "Demonstrated professionalism in customer service and team support",
-                "Created a customized experience for each customer",
-                "Cashiering experience"
-            ]
-        ),
-        (
-            "Shift Lead | Spring City – Grand Island, NE | 10/2021 - 04/2023",
-            [
-                "Took charge of a dozen employees in manager absences",
-                "Built strong customer service skills at the reception desk",
-                "Helped cook and maintain cleanliness of the cafe",
-                "Maintained a positive attitude with younger customers",
-                "Responsible for handling cash drawers and deposits on closing shifts"
-            ]
-        )
-    ]:
-        st.markdown('<div class="resume-item">', unsafe_allow_html=True)
-        st.markdown(f'<div class="resume-item-title">{title}</div>', unsafe_allow_html=True)
-        for bullet in bullets:
-            st.markdown(f"- {bullet}")
-        st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="resume-item">
+        <div class="resume-item-title">Golf Associate | Dick’s Sporting Goods – Grand Island, NE | 05/2023 - 08/2023</div>
+        <ul>
+            <li>Cross-trained within all departments</li>
+            <li>Demonstrated professionalism in customer service and team support</li>
+            <li>Created a customized experience for each customer</li>
+            <li>Cashiering experience</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
-    close_card()
+    st.markdown("""
+    <div class="resume-item">
+        <div class="resume-item-title">Shift Lead | Spring City – Grand Island, NE | 10/2021 - 04/2023</div>
+        <ul>
+            <li>Took charge of a dozen employees in manager absences</li>
+            <li>Built strong customer service skills at the reception desk</li>
+            <li>Helped cook and maintain cleanliness of the cafe</li>
+            <li>Maintained a positive attitude with younger customers</li>
+            <li>Responsible for handling cash drawers and deposits on closing shifts</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("</div>", unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
 
     with col1:
-        open_card("resume-card")
+        st.markdown('<div class="resume-card">', unsafe_allow_html=True)
         st.markdown('<div class="resume-section-title">Education</div>', unsafe_allow_html=True)
         st.markdown("- Graduate of Centura Public Schools with a 4.0 GPA and a 31 ACT score")
         st.markdown("- Currently enrolled at the University of Nebraska–Lincoln majoring in PGA Management")
-        close_card()
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with col2:
-        open_card("resume-card")
+        st.markdown('<div class="resume-card">', unsafe_allow_html=True)
         st.markdown('<div class="resume-section-title">Affiliations & Achievements</div>', unsafe_allow_html=True)
         st.markdown("- Honor Roll")
         st.markdown("- High School Athletics")
@@ -493,7 +474,7 @@ elif page == "Resume":
         st.markdown("- FBLA officer – 1 year")
         st.markdown("- Regents Scholarship")
         st.markdown("- PGAM Student")
-        close_card()
+        st.markdown("</div>", unsafe_allow_html=True)
 
     try:
         with open("resume.pdf", "rb") as file:
