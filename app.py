@@ -29,7 +29,7 @@ logo_svg = """
 
 logo_b64 = base64.b64encode(logo_svg.encode("utf-8")).decode("utf-8")
 logo_html = f"""
-<div style="display:flex; justify-content:center; margin-bottom: 18px; margin-top: 5px;">
+<div style="display:flex; justify-content:center; margin-bottom:18px; margin-top:5px;">
     <img src="data:image/svg+xml;base64,{logo_b64}" width="210">
 </div>
 """
@@ -54,6 +54,7 @@ html, body, [class*="css"] {
     color: #1f1f1f !important;
     padding-top: 2rem;
     padding-bottom: 3rem;
+    max-width: 1200px;
 }
 
 p, li, label, div, span, input, textarea {
@@ -215,6 +216,15 @@ ul {
 """, unsafe_allow_html=True)
 
 # -------------------------
+# HELPERS
+# -------------------------
+def open_card(card_class="info-card"):
+    st.markdown(f'<div class="{card_class}">', unsafe_allow_html=True)
+
+def close_card():
+    st.markdown('</div>', unsafe_allow_html=True)
+
+# -------------------------
 # SIDEBAR
 # -------------------------
 st.sidebar.markdown("## Navigation")
@@ -292,34 +302,28 @@ elif page == "About Me":
     st.markdown(logo_html, unsafe_allow_html=True)
     st.header("About Me")
 
-    st.markdown("""
-    <div class="info-card">
-        <p>
-            My name is Easton, and I am a 21-year-old from Cairo, Nebraska. I attended high school at Centura Public Schools,
-            where I graduated third in my class and earned all-state academic honors. After high school, I was accepted to the
-            University of Nebraska–Lincoln, where I originally pursued architecture. While I enjoyed parts of that field, I realized
-            it was not the right long-term path for me.
-        </p>
-
-        <p>
-            Since the spring of 2024, I have been a part of the PGA Golf Management program at the University of Nebraska–Lincoln.
-            Golf has always been a major part of my life, and I have especially developed a strong passion for understanding and teaching
-            the golf swing. Being able to turn that passion into a career is something I truly enjoy, and it motivates me to keep learning
-            and growing within the industry.
-        </p>
-
-        <p>
-            I have gained experience at a wide range of golf facilities, from small-town public courses to large-scale country clubs.
-            Through those opportunities, I have worked with people of all ages and skill levels, helping them improve their game and enjoy
-            the sport more. Those experiences have strengthened my communication skills, my professionalism, and my ability to connect with others.
-        </p>
-
-        <p>
-            Looking ahead, I hope my passion and talents lead me to opportunities across the country where I can continue building relationships,
-            expanding my knowledge of the game, and making lifelong connections through my career in golf.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    open_card("info-card")
+    st.write(
+        "My name is Easton, and I am a 21-year-old from Cairo, Nebraska. I attended high school at Centura Public Schools, "
+        "where I graduated third in my class and earned all-state academic honors."
+    )
+    st.write(
+        "After high school, I was accepted to the University of Nebraska–Lincoln, where I originally pursued architecture. "
+        "While I enjoyed parts of that field, I realized it was not the right long-term path for me."
+    )
+    st.write(
+        "Since the spring of 2024, I have been a part of the PGA Golf Management program at the University of Nebraska–Lincoln. "
+        "Golf has always been a major part of my life, and I have especially developed a strong passion for understanding and teaching the golf swing."
+    )
+    st.write(
+        "I have gained experience at a wide range of golf facilities, from small-town public courses to large-scale country clubs. "
+        "Through those opportunities, I have worked with people of all ages and skill levels, helping them improve their game and enjoy the sport more."
+    )
+    st.write(
+        "Looking ahead, I hope my passion and talents lead me to opportunities across the country where I can continue building relationships, "
+        "expanding my knowledge of the game, and making lifelong connections through my career in golf."
+    )
+    close_card()
 
     st.markdown("""
     <div class="small-card">
@@ -370,30 +374,22 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="info-card">
-        <h3>Additional Professional Experience</h3>
+    open_card("info-card")
+    st.subheader("Additional Professional Experience")
 
-        <p><strong>Cairo Watering Hole – Bartender</strong></p>
-        <ul>
-            <li>Developed hospitality and service skills in a fast-paced environment</li>
-            <li>Learned to stay composed under pressure while delivering strong customer experiences</li>
-        </ul>
+    st.markdown("**Cairo Watering Hole – Bartender**")
+    st.markdown("- Developed hospitality and service skills in a fast-paced environment")
+    st.markdown("- Learned to stay composed under pressure while delivering strong customer experiences")
 
-        <p><strong>Dick’s Sporting Goods – Golf Associate</strong></p>
-        <ul>
-            <li>Worked directly with customers to provide tailored product recommendations</li>
-            <li>Built experience in retail professionalism, teamwork, and customer communication</li>
-        </ul>
+    st.markdown("**Dick’s Sporting Goods – Golf Associate**")
+    st.markdown("- Worked directly with customers to provide tailored product recommendations")
+    st.markdown("- Built experience in retail professionalism, teamwork, and customer communication")
 
-        <p><strong>Spring City – Shift Lead</strong></p>
-        <ul>
-            <li>Led employees during manager absences</li>
-            <li>Managed customer-facing responsibilities and closing duties</li>
-            <li>Built leadership, accountability, and team management experience</li>
-        </ul>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("**Spring City – Shift Lead**")
+    st.markdown("- Led employees during manager absences")
+    st.markdown("- Managed customer-facing responsibilities and closing duties")
+    st.markdown("- Built leadership, accountability, and team management experience")
+    close_card()
 
     st.markdown("""
     <div class="small-card">
@@ -431,78 +427,73 @@ elif page == "Resume":
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="resume-card">
-        <div class="resume-section-title">Work Experience</div>
+    open_card("resume-card")
+    st.markdown('<div class="resume-section-title">Work Experience</div>', unsafe_allow_html=True)
 
-        <div class="resume-item">
-            <div class="resume-item-title">Seasonal Intern | Centura Hills Golf Club – Cairo, NE | 05/2024 - 08/2024</div>
-            <ul>
-                <li>Assisted the course’s head professional with lessons and tournaments</li>
-                <li>Gained valuable experience working with the course maintenance crew</li>
-                <li>Maintained a high level of professionalism with members and guests</li>
-                <li>Additional bartending experience</li>
-            </ul>
-        </div>
+    for title, bullets in [
+        (
+            "Seasonal Intern | Centura Hills Golf Club – Cairo, NE | 05/2024 - 08/2024",
+            [
+                "Assisted the course’s head professional with lessons and tournaments",
+                "Gained valuable experience working with the course maintenance crew",
+                "Maintained a high level of professionalism with members and guests",
+                "Additional bartending experience"
+            ]
+        ),
+        (
+            "Bartender | Cairo Watering Hole – Cairo, NE | 05/2024 - 08/2024",
+            [
+                "Gained valuable hospitality skills",
+                "Built bartending experience under pressure"
+            ]
+        ),
+        (
+            "Golf Associate | Dick’s Sporting Goods – Grand Island, NE | 05/2023 - 08/2023",
+            [
+                "Cross-trained within all departments",
+                "Demonstrated professionalism in customer service and team support",
+                "Created a customized experience for each customer",
+                "Cashiering experience"
+            ]
+        ),
+        (
+            "Shift Lead | Spring City – Grand Island, NE | 10/2021 - 04/2023",
+            [
+                "Took charge of a dozen employees in manager absences",
+                "Built strong customer service skills at the reception desk",
+                "Helped cook and maintain cleanliness of the cafe",
+                "Maintained a positive attitude with younger customers",
+                "Responsible for handling cash drawers and deposits on closing shifts"
+            ]
+        )
+    ]:
+        st.markdown('<div class="resume-item">', unsafe_allow_html=True)
+        st.markdown(f'<div class="resume-item-title">{title}</div>', unsafe_allow_html=True)
+        for bullet in bullets:
+            st.markdown(f"- {bullet}")
+        st.markdown('</div>', unsafe_allow_html=True)
 
-        <div class="resume-item">
-            <div class="resume-item-title">Bartender | Cairo Watering Hole – Cairo, NE | 05/2024 - 08/2024</div>
-            <ul>
-                <li>Gained valuable hospitality skills</li>
-                <li>Built bartending experience under pressure</li>
-            </ul>
-        </div>
-
-        <div class="resume-item">
-            <div class="resume-item-title">Golf Associate | Dick’s Sporting Goods – Grand Island, NE | 05/2023 - 08/2023</div>
-            <ul>
-                <li>Cross-trained within all departments</li>
-                <li>Demonstrated professionalism in customer service and team support</li>
-                <li>Created a customized experience for each customer</li>
-                <li>Cashiering experience</li>
-            </ul>
-        </div>
-
-        <div class="resume-item">
-            <div class="resume-item-title">Shift Lead | Spring City – Grand Island, NE | 10/2021 - 04/2023</div>
-            <ul>
-                <li>Took charge of a dozen employees in manager absences</li>
-                <li>Built strong customer service skills at the reception desk</li>
-                <li>Helped cook and maintain cleanliness of the cafe</li>
-                <li>Maintained a positive attitude with younger customers</li>
-                <li>Responsible for handling cash drawers and deposits on closing shifts</li>
-            </ul>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    close_card()
 
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("""
-        <div class="resume-card">
-            <div class="resume-section-title">Education</div>
-            <ul>
-                <li>Graduate of Centura Public Schools with a 4.0 GPA and a 31 ACT score</li>
-                <li>Currently enrolled at the University of Nebraska–Lincoln majoring in PGA Management</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
+        open_card("resume-card")
+        st.markdown('<div class="resume-section-title">Education</div>', unsafe_allow_html=True)
+        st.markdown("- Graduate of Centura Public Schools with a 4.0 GPA and a 31 ACT score")
+        st.markdown("- Currently enrolled at the University of Nebraska–Lincoln majoring in PGA Management")
+        close_card()
 
     with col2:
-        st.markdown("""
-        <div class="resume-card">
-            <div class="resume-section-title">Affiliations &amp; Achievements</div>
-            <ul>
-                <li>Honor Roll</li>
-                <li>High School Athletics</li>
-                <li>FBLA member – 3 years</li>
-                <li>FBLA officer – 1 year</li>
-                <li>Regents Scholarship</li>
-                <li>PGAM Student</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
+        open_card("resume-card")
+        st.markdown('<div class="resume-section-title">Affiliations & Achievements</div>', unsafe_allow_html=True)
+        st.markdown("- Honor Roll")
+        st.markdown("- High School Athletics")
+        st.markdown("- FBLA member – 3 years")
+        st.markdown("- FBLA officer – 1 year")
+        st.markdown("- Regents Scholarship")
+        st.markdown("- PGAM Student")
+        close_card()
 
     try:
         with open("resume.pdf", "rb") as file:
