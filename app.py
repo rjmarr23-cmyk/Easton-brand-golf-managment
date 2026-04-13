@@ -360,7 +360,7 @@ st.markdown("- Managed customer-facing responsibilities and closing duties")
 st.markdown("- Built leadership, accountability, and team management experience")
 
 st.markdown('</div>', unsafe_allow_html=True)
-    st.markdown("""
+st.markdown("""
     <div class="small-card">
         <h3>What These Experiences Show</h3>
         <p>
