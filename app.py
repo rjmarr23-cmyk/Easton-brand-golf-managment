@@ -338,37 +338,37 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-st.markdown('<div class="info-card">', unsafe_allow_html=True)
+    st.markdown('<div class="info-card">', unsafe_allow_html=True)
 
-st.subheader("Additional Professional Experience")
+    st.subheader("Additional Professional Experience")
 
-st.markdown("**Cairo Watering Hole – Bartender**")
-st.markdown("- Developed hospitality and service skills in a fast-paced environment")
-st.markdown("- Learned to stay composed under pressure while delivering strong customer experiences")
+    st.markdown("**Cairo Watering Hole – Bartender**")
+    st.markdown("- Developed hospitality and service skills in a fast-paced environment")
+    st.markdown("- Learned to stay composed under pressure while delivering strong customer experiences")
 
-st.markdown("")
+    st.markdown("")
 
-st.markdown("**Dick’s Sporting Goods – Golf Associate**")
-st.markdown("- Worked directly with customers to provide tailored product recommendations")
-st.markdown("- Built experience in retail professionalism, teamwork, and customer communication")
+    st.markdown("**Dick’s Sporting Goods – Golf Associate**")
+    st.markdown("- Worked directly with customers to provide tailored product recommendations")
+    st.markdown("- Built experience in retail professionalism, teamwork, and customer communication")
 
-st.markdown("")
+    st.markdown("")
 
-st.markdown("**Spring City – Shift Lead**")
-st.markdown("- Led employees during manager absences")
-st.markdown("- Managed customer-facing responsibilities and closing duties")
-st.markdown("- Built leadership, accountability, and team management experience")
+    st.markdown("**Spring City – Shift Lead**")
+    st.markdown("- Led employees during manager absences")
+    st.markdown("- Managed customer-facing responsibilities and closing duties")
+    st.markdown("- Built leadership, accountability, and team management experience")
 
-st.markdown('</div>', unsafe_allow_html=True)
-st.markdown("""
-    <div class="small-card">
-        <h3>What These Experiences Show</h3>
-        <p>
-            Across golf, hospitality, retail, and leadership roles, I have built a strong foundation in service,
-            communication, responsibility, and relationship-building. These experiences continue to prepare me
-            for a career in golf and club management.
-        </p>
-    </div>
+    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown("""
+        <div class="small-card">
+            <h3>What These Experiences Show</h3>
+            <p>
+                Across golf, hospitality, retail, and leadership roles, I have built a strong foundation in service,
+                communication, responsibility, and relationship-building. These experiences continue to prepare me
+                for a career in golf and club management.
+            </p>
+        </div>
     """, unsafe_allow_html=True)
 
 # -------------------------
