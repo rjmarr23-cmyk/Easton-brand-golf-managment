@@ -20,7 +20,7 @@ logo_svg = """
   <rect width="240" height="240" rx="34" fill="#0B3D2E"/>
 
   <!-- Circle (bigger) -->
-  <circle cx="120" cy="105" r="78" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+  <circle cx="120" cy="105" r="80" fill="none" stroke="#FFFFFF" stroke-width="6"/>
 
   <!-- B (white) -->
   <path d="M85 70 H130 
