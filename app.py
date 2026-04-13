@@ -349,7 +349,7 @@ elif page == "Portfolio":
 
 st.header("Additional Professional Experience")
 
-    st.markdown("""
+st.markdown("""
     <div class="job-card">
         <h3>Cairo Watering Hole – Bartender</h3>
         <p>Developed hospitality and service skills in a fast-paced environment.</p>
@@ -357,7 +357,7 @@ st.header("Additional Professional Experience")
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
+st.markdown("""
     <div class="job-card">
         <h3>Dick’s Sporting Goods – Golf Associate</h3>
         <p>Worked directly with customers to provide tailored product recommendations.</p>
@@ -365,7 +365,7 @@ st.header("Additional Professional Experience")
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
+st.markdown("""
     <div class="job-card">
         <h3>Spring City – Shift Lead</h3>
         <p>Led employees during manager absences.</p>
