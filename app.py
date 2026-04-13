@@ -13,7 +13,7 @@ st.set_page_config(
 logo_svg = """
 <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
   <rect width="240" height="240" rx="34" fill="#0B3D2E"/>
-  <circle cx="120" cy="102" r="72" fill="none" stroke="#F5F1E8" stroke-width="6"/>
+  <circle cx="120" cy="102" r="80" fill="none" stroke="#F5F1E8" stroke-width="6"/>
   <path d="M78 58 H130 Q150 58 150 76 Q150 91 132 96 Q148 100 148 116 Q148 138 122 138 H78 Z"
         fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M102 58 V138" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
