@@ -347,32 +347,32 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-st.header("Additional Professional Experience")
+    st.header("Additional Professional Experience")
 
-st.markdown("""
-    <div class="job-card">
-        <h3>Cairo Watering Hole – Bartender</h3>
-        <p>Developed hospitality and service skills in a fast-paced environment.</p>
-        <p>Learned to stay composed under pressure while delivering strong customer experiences.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="job-card">
+            <h3>Cairo Watering Hole – Bartender</h3>
+            <p>Developed hospitality and service skills in a fast-paced environment.</p>
+            <p>Learned to stay composed under pressure while delivering strong customer experiences.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
-st.markdown("""
-    <div class="job-card">
-        <h3>Dick’s Sporting Goods – Golf Associate</h3>
-        <p>Worked directly with customers to provide tailored product recommendations.</p>
-        <p>Built experience in retail professionalism, teamwork, and customer communication.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="job-card">
+            <h3>Dick’s Sporting Goods – Golf Associate</h3>
+            <p>Worked directly with customers to provide tailored product recommendations.</p>
+            <p>Built experience in retail professionalism, teamwork, and customer communication.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
-st.markdown("""
-    <div class="job-card">
-        <h3>Spring City – Shift Lead</h3>
-        <p>Led employees during manager absences.</p>
-        <p>Managed customer-facing responsibilities and closing duties.</p>
-        <p>Built leadership, accountability, and team management experience.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""
+        <div class="job-card">
+            <h3>Spring City – Shift Lead</h3>
+            <p>Led employees during manager absences.</p>
+            <p>Managed customer-facing responsibilities and closing duties.</p>
+            <p>Built leadership, accountability, and team management experience.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
 # -------------------------
 # RESUME
