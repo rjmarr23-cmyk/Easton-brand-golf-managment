@@ -347,7 +347,7 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-   st.header("Additional Professional Experience")
+st.header("Additional Professional Experience")
 
     st.markdown("""
     <div class="job-card">
