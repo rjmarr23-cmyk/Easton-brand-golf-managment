@@ -13,7 +13,7 @@ st.set_page_config(
 logo_svg = """
 <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
   <rect width="240" height="240" rx="34" fill="#0B3D2E"/>
-  <circle cx="120" cy="102" r="80" fill="none" stroke="#F5F1E8" stroke-width="6"/>
+  <circle cx="120" cy="102" r="78" fill="none" stroke="#F5F1E8" stroke-width="6"/>
   <path d="M78 58 H130 Q150 58 150 76 Q150 91 132 96 Q148 100 148 116 Q148 138 122 138 H78 Z"
         fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M102 58 V138" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
@@ -281,38 +281,39 @@ elif page == "About Me":
     st.markdown(logo_html, unsafe_allow_html=True)
     st.header("About Me")
 
-    st.markdown('<div class="info-card">', unsafe_allow_html=True)
-    st.write(
-        "My name is Easton, and I am a 21-year-old from Cairo, Nebraska. I attended high school at Centura Public Schools, "
-        "where I graduated third in my class and earned all-state academic honors. After high school, I was accepted to the "
-        "University of Nebraska–Lincoln, where I originally pursued architecture. While I enjoyed parts of that field, I realized "
-        "it was not the right long-term path for me."
-    )
-    st.write(
-        "Since the spring of 2024, I have been a part of the PGA Golf Management program at the University of Nebraska–Lincoln. "
-        "Golf has always been a major part of my life, and I have especially developed a strong passion for understanding and teaching "
-        "the golf swing. Being able to turn that passion into a career is something I truly enjoy, and it motivates me to keep learning "
-        "and growing within the industry."
-    )
-    st.write(
-        "I have gained experience at a wide range of golf facilities, from small-town public courses to large-scale country clubs. "
-        "Through those opportunities, I have worked with people of all ages and skill levels, helping them improve their game and enjoy "
-        "the sport more. Those experiences have strengthened my communication skills, my professionalism, and my ability to connect with others."
-    )
-    st.write(
-        "Looking ahead, I hope my passion and talents lead me to opportunities across the country where I can continue building relationships, "
-        "expanding my knowledge of the game, and making lifelong connections through my career in golf."
-    )
-    st.markdown("</div>", unsafe_allow_html=True)
-
     st.markdown("""
+    <div class="info-card">
+        <p>
+            My name is Easton, and I am a 21-year-old from Cairo, Nebraska. I attended high school at Centura Public Schools,
+            where I graduated third in my class and earned all-state academic honors. After high school, I was accepted to the
+            University of Nebraska–Lincoln, where I originally pursued architecture. While I enjoyed parts of that field, I realized
+            it was not the right long-term path for me.
+        </p>
+
+        <p>
+            Since the spring of 2024, I have been a part of the PGA Golf Management program at the University of Nebraska–Lincoln.
+            Golf has always been a major part of my life, and I have especially developed a strong passion for understanding and teaching
+            the golf swing. Being able to turn that passion into a career is something I truly enjoy, and it motivates me to keep learning
+            and growing within the industry.
+        </p>
+
+        <p>
+            I have gained experience at a wide range of golf facilities, from small-town public courses to large-scale country clubs.
+            Through those opportunities, I have worked with people of all ages and skill levels, helping them improve their game and enjoy
+            the sport more. Those experiences have strengthened my communication skills, my professionalism, and my ability to connect with others.
+        </p>
+
+        <p>
+            Looking ahead, I hope my passion and talents lead me to opportunities across the country where I can continue building relationships,
+            expanding my knowledge of the game, and making lifelong connections through my career in golf.
+        </p>
+    </div>
+
     <div class="small-card">
         <h3>Personal Values</h3>
         <p>Hard work, reliability, respect, professionalism, and creating genuine connections with people.</p>
     </div>
-    """, unsafe_allow_html=True)
 
-    st.markdown("""
     <div class="small-card">
         <h3>Career Direction</h3>
         <p>
