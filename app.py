@@ -106,6 +106,15 @@ section[data-testid="stSidebar"] * {
     border-left: 7px solid #0B3D2E;
 }
 
+.job-card {
+    background-color: #FFFFFF;
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    margin-bottom: 18px;
+    border-left: 6px solid #0B3D2E;
+}
+
 .resume-card {
     background-color: #FFFFFF;
     color: #1f1f1f !important;
@@ -338,37 +347,31 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown('<div class="info-card">', unsafe_allow_html=True)
+   st.header("Additional Professional Experience")
 
-    st.subheader("Additional Professional Experience")
-
-    st.markdown("**Cairo Watering Hole – Bartender**")
-    st.markdown("- Developed hospitality and service skills in a fast-paced environment")
-    st.markdown("- Learned to stay composed under pressure while delivering strong customer experiences")
-
-    st.markdown("")
-
-    st.markdown("**Dick’s Sporting Goods – Golf Associate**")
-    st.markdown("- Worked directly with customers to provide tailored product recommendations")
-    st.markdown("- Built experience in retail professionalism, teamwork, and customer communication")
-
-    st.markdown("")
-
-    st.markdown("**Spring City – Shift Lead**")
-    st.markdown("- Led employees during manager absences")
-    st.markdown("- Managed customer-facing responsibilities and closing duties")
-    st.markdown("- Built leadership, accountability, and team management experience")
-
-    st.markdown('</div>', unsafe_allow_html=True)
     st.markdown("""
-        <div class="small-card">
-            <h3>What These Experiences Show</h3>
-            <p>
-                Across golf, hospitality, retail, and leadership roles, I have built a strong foundation in service,
-                communication, responsibility, and relationship-building. These experiences continue to prepare me
-                for a career in golf and club management.
-            </p>
-        </div>
+    <div class="job-card">
+        <h3>Cairo Watering Hole – Bartender</h3>
+        <p>Developed hospitality and service skills in a fast-paced environment.</p>
+        <p>Learned to stay composed under pressure while delivering strong customer experiences.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="job-card">
+        <h3>Dick’s Sporting Goods – Golf Associate</h3>
+        <p>Worked directly with customers to provide tailored product recommendations.</p>
+        <p>Built experience in retail professionalism, teamwork, and customer communication.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="job-card">
+        <h3>Spring City – Shift Lead</h3>
+        <p>Led employees during manager absences.</p>
+        <p>Managed customer-facing responsibilities and closing duties.</p>
+        <p>Built leadership, accountability, and team management experience.</p>
+    </div>
     """, unsafe_allow_html=True)
 
 # -------------------------
