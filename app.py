@@ -338,24 +338,28 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
+  st.markdown("""
 <div class="info-card">
     <h3>Additional Professional Experience</h3>
 
-    <strong>Cairo Watering Hole – Bartender</strong><br>
-    • Developed hospitality and service skills in a fast-paced environment<br>
-    • Learned to stay composed under pressure while delivering strong customer experiences
-    <br><br>
+    <p><strong>Cairo Watering Hole – Bartender</strong></p>
+    <p>
+        • Developed hospitality and service skills in a fast-paced environment<br>
+        • Learned to stay composed under pressure while delivering strong customer experiences
+    </p>
 
-    <strong>Dick’s Sporting Goods – Golf Associate</strong><br>
-    • Worked directly with customers to provide tailored product recommendations<br>
-    • Built experience in retail professionalism, teamwork, and customer communication
-    <br><br>
+    <p><strong>Dick’s Sporting Goods – Golf Associate</strong></p>
+    <p>
+        • Worked directly with customers to provide tailored product recommendations<br>
+        • Built experience in retail professionalism, teamwork, and customer communication
+    </p>
 
-    <strong>Spring City – Shift Lead</strong><br>
-    • Led employees during manager absences<br>
-    • Managed customer-facing responsibilities and closing duties<br>
-    • Built leadership, accountability, and team management experience
+    <p><strong>Spring City – Shift Lead</strong></p>
+    <p>
+        • Led employees during manager absences<br>
+        • Managed customer-facing responsibilities and closing duties<br>
+        • Built leadership, accountability, and team management experience
+    </p>
 </div>
 """, unsafe_allow_html=True)
     st.markdown("""
