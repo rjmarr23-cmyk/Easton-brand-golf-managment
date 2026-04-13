@@ -13,25 +13,47 @@ st.set_page_config(
 logo_svg = """
 <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
   <rect width="240" height="240" rx="34" fill="#0B3D2E"/>
-  <circle cx="120" cy="102" r="78" fill="none" stroke="#F5F1E8" stroke-width="6"/>
-  <path d="M78 58 H130 Q150 58 150 76 Q150 91 132 96 Q148 100 148 116 Q148 138 122 138 H78 Z"
-        fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M102 58 V138" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
-  <path d="M102 58 H136" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
-  <path d="M102 98 H130" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
-  <path d="M102 138 H138" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
-  <path d="M166 48 L166 124" fill="none" stroke="#F5F1E8" stroke-width="5" stroke-linecap="round"/>
-  <path d="M166 48 L184 60 L166 70 Z" fill="#F5F1E8"/>
-  <circle cx="166" cy="142" r="6" fill="#F5F1E8"/>
-  <text x="120" y="198" text-anchor="middle" font-size="18" font-family="Georgia, serif" fill="#F5F1E8">EASTON BRAND</text>
-</svg>
-"""
 
-logo_b64 = base64.b64encode(logo_svg.encode("utf-8")).decode("utf-8")
-logo_html = f"""
-<div style="display:flex; justify-content:center; margin-bottom: 18px; margin-top: 5px;">
-    <img src="data:image/svg+xml;base64,{logo_b64}" width="210">
-</div>
+  <!-- Circle -->
+  <circle cx="120" cy="105" r="72" fill="none" stroke="#F5F1E8" stroke-width="6"/>
+
+  <!-- B (bold + cleaner) -->
+  <path d="M85 70 H130 
+           Q155 70 155 95 
+           Q155 115 130 120 
+           Q150 125 150 145 
+           Q150 165 125 165 
+           H85 Z"
+        fill="none"
+        stroke="#F5F1E8"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- E (strong vertical + spacing) -->
+  <path d="M95 70 V165
+           M95 70 H140
+           M95 118 H130
+           M95 165 H140"
+        fill="none"
+        stroke="#F5F1E8"
+        stroke-width="10"
+        stroke-linecap="round"/>
+
+  <!-- Flag (slightly thinner so EB stands out) -->
+  <path d="M175 55 V130" stroke="#F5F1E8" stroke-width="4"/>
+  <path d="M175 55 L190 65 L175 75 Z" fill="#F5F1E8"/>
+  <circle cx="175" cy="145" r="5" fill="#F5F1E8"/>
+
+  <!-- Text -->
+  <text x="120" y="205" text-anchor="middle"
+        font-size="16"
+        font-family="Georgia, serif"
+        fill="#F5F1E8"
+        letter-spacing="1.5">
+        EASTON BRAND
+  </text>
+</svg>
 """
 
 # -------------------------
