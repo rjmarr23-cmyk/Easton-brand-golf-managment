@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 # -------------------------
-# BUILT-IN EB GOLF LOGO (FIXED)
+# BUILT-IN EB GOLF LOGO
 # -------------------------
 logo_svg = """
 <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ logo_html = f"""
 """
 
 # -------------------------
-# CSS FIXES FOR LIGHT/DARK MODE
+# CSS
 # -------------------------
 st.markdown("""
 <style>
@@ -45,37 +45,32 @@ html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
 }
 
-/* Main app area */
 [data-testid="stAppViewContainer"] {
     background-color: #F5F1E8;
     color: #1f1f1f;
 }
 
-/* Main content block */
 .main .block-container {
     color: #1f1f1f !important;
 }
 
-/* Force readable text everywhere */
 p, li, label, div, span, input, textarea {
     color: #1f1f1f !important;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif !important;
     color: #0B3D2E !important;
 }
 
-/* Sidebar */
 section[data-testid="stSidebar"] {
     background-color: #0B3D2E;
 }
+
 section[data-testid="stSidebar"] * {
     color: #F5F1E8 !important;
 }
 
-/* Cards */
 .hero-box {
     background: linear-gradient(135deg, #0B3D2E 0%, #14523f 100%);
     padding: 40px;
@@ -84,6 +79,7 @@ section[data-testid="stSidebar"] * {
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     margin-bottom: 25px;
 }
+
 .hero-box h1, .hero-box h2, .hero-box h3, .hero-box p {
     color: #F5F1E8 !important;
 }
@@ -97,9 +93,6 @@ section[data-testid="stSidebar"] * {
     margin-bottom: 20px;
     border-left: 6px solid #0B3D2E;
 }
-.info-card p, .info-card li, .info-card strong, .info-card h3 {
-    color: #1f1f1f !important;
-}
 
 .small-card {
     background-color: #FFFFFF;
@@ -109,9 +102,6 @@ section[data-testid="stSidebar"] * {
     box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     margin-bottom: 15px;
 }
-.small-card p, .small-card h3 {
-    color: #1f1f1f !important;
-}
 
 .contact-box {
     background-color: #FFFFFF;
@@ -119,9 +109,6 @@ section[data-testid="stSidebar"] * {
     padding: 24px;
     border-radius: 18px;
     box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-}
-.contact-box p, .contact-box h3, .contact-box strong {
-    color: #1f1f1f !important;
 }
 
 .badge {
@@ -135,28 +122,13 @@ section[data-testid="stSidebar"] * {
     font-size: 0.95rem;
 }
 
-/* Inputs */
 .stTextInput input, .stTextArea textarea {
     background-color: #FFFFFF !important;
     color: #1f1f1f !important;
     border-radius: 10px;
 }
 
-/* Buttons */
-.stButton > button {
-    background-color: #0B3D2E;
-    color: #F5F1E8 !important;
-    border-radius: 10px;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    font-weight: 600;
-}
-.stButton > button:hover {
-    background-color: #14523f;
-    color: #F5F1E8 !important;
-}
-
-/* Download button */
+.stButton > button,
 .stDownloadButton > button {
     background-color: #0B3D2E;
     color: #F5F1E8 !important;
@@ -164,6 +136,12 @@ section[data-testid="stSidebar"] * {
     border: none;
     padding: 0.6rem 1.2rem;
     font-weight: 600;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background-color: #14523f;
+    color: #F5F1E8 !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -246,34 +224,34 @@ elif page == "About Me":
     st.markdown(logo_html, unsafe_allow_html=True)
     st.header("About Me")
 
-    st.markdown("""
-    <div class="info-card">
-        <p>
-            My name is Easton, and I am a 21-year-old from Cairo, Nebraska. I attended high school at Centura Public Schools,
-            where I graduated third in my class and earned all-state academic honors. After high school, I was accepted to the
-            University of Nebraska–Lincoln, where I originally pursued architecture. While I enjoyed parts of that field, I realized
-            it was not the right long-term path for me.
-        </p>
-
-        <p>
-            Since the spring of 2024, I have been a part of the PGA Golf Management program at the University of Nebraska–Lincoln.
-            Golf has always been a major part of my life, and I have especially developed a strong passion for understanding and teaching
-            the golf swing. Being able to turn that passion into a career is something I truly enjoy, and it motivates me to keep learning
-            and growing within the industry.
-        </p>
-
-        <p>
-            I have gained experience at a wide range of golf facilities, from small-town public courses to large-scale country clubs.
-            Through those opportunities, I have worked with people of all ages and skill levels, helping them improve their game and enjoy
-            the sport more. Those experiences have strengthened my communication skills, my professionalism, and my ability to connect with others.
-        </p>
-
-        <p>
-            Looking ahead, I hope my passion and talents lead me to opportunities across the country where I can continue building relationships,
-            expanding my knowledge of the game, and making lifelong connections through my career in golf.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown('<div class="info-card">', unsafe_allow_html=True)
+    st.write(
+        "My name is Easton, and I am a 21-year-old from Cairo, Nebraska. "
+        "I attended high school at Centura Public Schools, where I graduated third in my class "
+        "and earned all-state academic honors. After high school, I was accepted to the University "
+        "of Nebraska–Lincoln, where I originally pursued architecture. While I enjoyed parts of that "
+        "field, I realized it was not the right long-term path for me."
+    )
+    st.write(
+        "Since the spring of 2024, I have been a part of the PGA Golf Management program at the "
+        "University of Nebraska–Lincoln. Golf has always been a major part of my life, and I have "
+        "especially developed a strong passion for understanding and teaching the golf swing. Being "
+        "able to turn that passion into a career is something I truly enjoy, and it motivates me to "
+        "keep learning and growing within the industry."
+    )
+    st.write(
+        "I have gained experience at a wide range of golf facilities, from small-town public courses "
+        "to large-scale country clubs. Through those opportunities, I have worked with people of all "
+        "ages and skill levels, helping them improve their game and enjoy the sport more. Those "
+        "experiences have strengthened my communication skills, my professionalism, and my ability to "
+        "connect with others."
+    )
+    st.write(
+        "Looking ahead, I hope my passion and talents lead me to opportunities across the country "
+        "where I can continue building relationships, expanding my knowledge of the game, and making "
+        "lifelong connections through my career in golf."
+    )
+    st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("""
     <div class="small-card">
@@ -286,8 +264,8 @@ elif page == "About Me":
     <div class="small-card">
         <h3>Career Direction</h3>
         <p>
-            My long-term goal is to build a successful career in the golf industry through club management, instruction,
-            and member service while continuing to grow as a leader and golf professional.
+            My long-term goal is to build a successful career in the golf industry through club management,
+            instruction, and member service while continuing to grow as a leader and golf professional.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -316,43 +294,39 @@ elif page == "Portfolio":
     <div class="info-card">
         <h3>Youth Golf Leadership</h3>
         <p>
-            One of the most meaningful parts of my experience has been helping run youth golf programming. I have worked with young golfers
-            in instructional and camp settings, helping them improve fundamentals, build confidence, and enjoy the game. My commitment to
-            creating a positive and engaging learning environment led to being recognized as a top camp leader.
+            One of the most meaningful parts of my experience has been helping run youth golf programming.
+            I have worked with young golfers in instructional and camp settings, helping them improve
+            fundamentals, build confidence, and enjoy the game. My commitment to creating a positive and
+            engaging learning environment led to being recognized as a top camp leader.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="info-card">
-        <h3>Additional Professional Experience</h3>
-        <p><strong>Cairo Watering Hole – Bartender</strong></p>
-        <ul>
-            <li>Developed hospitality and service skills in a fast-paced environment</li>
-            <li>Learned to stay composed under pressure while delivering strong customer experiences</li>
-        </ul>
+    st.markdown('<div class="info-card">', unsafe_allow_html=True)
+    st.subheader("Additional Professional Experience")
 
-        <p><strong>Dick’s Sporting Goods – Golf Associate</strong></p>
-        <ul>
-            <li>Worked directly with customers to provide tailored product recommendations</li>
-            <li>Built experience in retail professionalism, teamwork, and customer communication</li>
-        </ul>
+    st.markdown("**Cairo Watering Hole – Bartender**")
+    st.markdown("- Developed hospitality and service skills in a fast-paced environment")
+    st.markdown("- Learned to stay composed under pressure while delivering strong customer experiences")
 
-        <p><strong>Spring City – Shift Lead</strong></p>
-        <ul>
-            <li>Led employees during manager absences</li>
-            <li>Managed customer-facing responsibilities and closing duties</li>
-            <li>Built leadership, accountability, and team management experience</li>
-        </ul>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("**Dick’s Sporting Goods – Golf Associate**")
+    st.markdown("- Worked directly with customers to provide tailored product recommendations")
+    st.markdown("- Built experience in retail professionalism, teamwork, and customer communication")
+
+    st.markdown("**Spring City – Shift Lead**")
+    st.markdown("- Led employees during manager absences")
+    st.markdown("- Managed customer-facing responsibilities and closing duties")
+    st.markdown("- Built leadership, accountability, and team management experience")
+
+    st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("""
     <div class="small-card">
         <h3>What These Experiences Show</h3>
         <p>
-            Across golf, hospitality, retail, and leadership roles, I have built a strong foundation in service, communication,
-            responsibility, and relationship-building. These experiences continue to prepare me for a career in golf and club management.
+            Across golf, hospitality, retail, and leadership roles, I have built a strong foundation in service,
+            communication, responsibility, and relationship-building. These experiences continue to prepare me
+            for a career in golf and club management.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -366,38 +340,64 @@ elif page == "Resume":
 
     st.markdown("""
     <div class="info-card">
-        <h3>Resume Preview</h3>
-        <p>
-            You can view my resume below and download a copy as well.
-        </p>
+        <h3>Easton Brand</h3>
+        <p>easton.brand3214@gmail.com | (308) 379-8091 | Lincoln, NE 68503</p>
     </div>
     """, unsafe_allow_html=True)
 
+    st.subheader("Professional Summary")
+    st.write(
+        "Proactive student with strong academic, communication, and leadership skills. "
+        "Eager to bring value to an organization through hard work, professionalism, and a commitment to quality."
+    )
+
+    st.subheader("Work Experience")
+
+    st.markdown("**Seasonal Intern | Centura Hills Golf Club – Cairo, NE | 05/2024 - 08/2024**")
+    st.markdown("- Assisted the course’s head professional with lessons and tournaments")
+    st.markdown("- Gained valuable experience working with the course maintenance crew")
+    st.markdown("- Maintained a high level of professionalism with members and guests")
+    st.markdown("- Additional bartending experience")
+
+    st.markdown("**Bartender | Cairo Watering Hole – Cairo, NE | 05/2024 - 08/2024**")
+    st.markdown("- Gained valuable hospitality skills")
+    st.markdown("- Built bartending experience under pressure")
+
+    st.markdown("**Golf Associate | Dick’s Sporting Goods – Grand Island, NE | 05/2023 - 08/2023**")
+    st.markdown("- Cross-trained within all departments")
+    st.markdown("- Demonstrated professionalism in customer service and team support")
+    st.markdown("- Created a customized experience for each customer")
+    st.markdown("- Cashiering experience")
+
+    st.markdown("**Shift Lead | Spring City – Grand Island, NE | 10/2021 - 04/2023**")
+    st.markdown("- Took charge of a dozen employees in manager absences")
+    st.markdown("- Built strong customer service skills at the reception desk")
+    st.markdown("- Helped cook and maintain cleanliness of the cafe")
+    st.markdown("- Maintained a positive attitude with younger customers")
+    st.markdown("- Responsible for handling cash drawers and deposits on closing shifts")
+
+    st.subheader("Education")
+    st.markdown("- Graduate of Centura Public Schools with a 4.0 GPA and a 31 ACT score")
+    st.markdown("- Currently enrolled at the University of Nebraska–Lincoln majoring in PGA Management")
+
+    st.subheader("Affiliations & Achievements")
+    st.markdown("- Honor Roll")
+    st.markdown("- High School Athletics")
+    st.markdown("- FBLA member – 3 years")
+    st.markdown("- FBLA officer – 1 year")
+    st.markdown("- Regents Scholarship")
+    st.markdown("- PGAM Student")
+
     try:
-        with open("resume.pdf", "rb") as pdf_file:
-            pdf_bytes = pdf_file.read()
-
-        base64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
-        pdf_display = f'''
-        <iframe 
-            src="data:application/pdf;base64,{base64_pdf}" 
-            width="100%" 
-            height="900" 
-            type="application/pdf"
-            style="border: 1px solid #ccc; border-radius: 12px;">
-        </iframe>
-        '''
-        st.markdown(pdf_display, unsafe_allow_html=True)
-
-        st.download_button(
-            label="Download Resume",
-            data=pdf_bytes,
-            file_name="Easton_Brand_Resume.pdf",
-            mime="application/pdf"
-        )
-
+        with open("resume.pdf", "rb") as file:
+            st.download_button(
+                label="Download Resume PDF",
+                data=file,
+                file_name="Easton_Brand_Resume.pdf",
+                mime="application/pdf"
+            )
     except FileNotFoundError:
-        st.warning("Upload your resume PDF to GitHub and name it exactly: resume.pdf")
+        st.info("If you want the PDF download button to work, upload your file and name it resume.pdf")
 
 # -------------------------
 # CONTACT
@@ -413,8 +413,8 @@ elif page == "Contact":
         <p><strong>Phone:</strong> (308) 379-8091</p>
         <p><strong>Location:</strong> Lincoln, Nebraska</p>
         <p>
-            I am always open to opportunities to connect with others in the golf industry, discuss future career possibilities,
-            and continue growing through new experiences.
+            I am always open to opportunities to connect with others in the golf industry, discuss future
+            career possibilities, and continue growing through new experiences.
         </p>
     </div>
     """, unsafe_allow_html=True)
