@@ -8,92 +8,120 @@ st.set_page_config(
 )
 
 # -------------------------
-# BUILT-IN EB GOLF LOGO (SVG)
+# BUILT-IN EB GOLF LOGO (FIXED)
 # -------------------------
 logo_svg = """
-<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-  <rect width="220" height="220" rx="30" fill="#0B3D2E"/>
-  <circle cx="110" cy="110" r="82" fill="none" stroke="#F5F1E8" stroke-width="6"/>
-  <path d="M72 70 H130 Q150 70 150 88 Q150 103 132 108 Q148 112 148 128 Q148 150 122 150 H72 Z"
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="240" rx="34" fill="#0B3D2E"/>
+  <circle cx="120" cy="102" r="72" fill="none" stroke="#F5F1E8" stroke-width="6"/>
+  <path d="M78 58 H130 Q150 58 150 76 Q150 91 132 96 Q148 100 148 116 Q148 138 122 138 H78 Z"
         fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M102 70 V150" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
-  <path d="M102 70 H138" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
-  <path d="M102 108 H132" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
-  <path d="M102 150 H140" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
-  <path d="M162 58 L162 136" fill="none" stroke="#F5F1E8" stroke-width="5" stroke-linecap="round"/>
-  <path d="M162 58 L182 69 L162 79 Z" fill="#F5F1E8"/>
-  <circle cx="162" cy="148" r="6" fill="#F5F1E8"/>
-  <text x="110" y="190" text-anchor="middle" font-size="20" font-family="Georgia, serif" fill="#F5F1E8">EASTON BRAND</text>
+  <path d="M102 58 V138" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M102 58 H136" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M102 98 H130" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M102 138 H138" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M166 48 L166 124" fill="none" stroke="#F5F1E8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M166 48 L184 60 L166 70 Z" fill="#F5F1E8"/>
+  <circle cx="166" cy="142" r="6" fill="#F5F1E8"/>
+  <text x="120" y="198" text-anchor="middle" font-size="18" font-family="Georgia, serif" fill="#F5F1E8">EASTON BRAND</text>
 </svg>
 """
 
 logo_b64 = base64.b64encode(logo_svg.encode("utf-8")).decode("utf-8")
 logo_html = f"""
-<div style="display:flex; justify-content:center; margin-bottom: 10px;">
-    <img src="data:image/svg+xml;base64,{logo_b64}" width="190">
+<div style="display:flex; justify-content:center; margin-bottom: 18px; margin-top: 5px;">
+    <img src="data:image/svg+xml;base64,{logo_b64}" width="210">
 </div>
 """
 
 # -------------------------
-# CUSTOM CSS
+# CSS FIXES FOR LIGHT/DARK MODE
 # -------------------------
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
 
-html, body, [class*="css"]  {
+html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
+}
+
+/* Main app area */
+[data-testid="stAppViewContainer"] {
     background-color: #F5F1E8;
     color: #1f1f1f;
 }
 
+/* Main content block */
+.main .block-container {
+    color: #1f1f1f !important;
+}
+
+/* Force readable text everywhere */
+p, li, label, div, span, input, textarea {
+    color: #1f1f1f !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif !important;
+    color: #0B3D2E !important;
+}
+
+/* Sidebar */
 section[data-testid="stSidebar"] {
     background-color: #0B3D2E;
 }
-
 section[data-testid="stSidebar"] * {
     color: #F5F1E8 !important;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    color: #0B3D2E;
-}
-
+/* Cards */
 .hero-box {
     background: linear-gradient(135deg, #0B3D2E 0%, #14523f 100%);
     padding: 40px;
     border-radius: 20px;
-    color: #F5F1E8;
+    color: #F5F1E8 !important;
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     margin-bottom: 25px;
 }
-
-.hero-box h1, .hero-box h3, .hero-box p {
+.hero-box h1, .hero-box h2, .hero-box h3, .hero-box p {
     color: #F5F1E8 !important;
 }
 
 .info-card {
-    background-color: white;
+    background-color: #FFFFFF;
+    color: #1f1f1f !important;
     padding: 24px;
     border-radius: 18px;
     box-shadow: 0 8px 22px rgba(0,0,0,0.08);
     margin-bottom: 20px;
     border-left: 6px solid #0B3D2E;
 }
+.info-card p, .info-card li, .info-card strong, .info-card h3 {
+    color: #1f1f1f !important;
+}
 
 .small-card {
-    background-color: white;
+    background-color: #FFFFFF;
+    color: #1f1f1f !important;
     padding: 18px;
     border-radius: 16px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     margin-bottom: 15px;
 }
+.small-card p, .small-card h3 {
+    color: #1f1f1f !important;
+}
 
-.tagline {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-top: 10px;
+.contact-box {
+    background-color: #FFFFFF;
+    color: #1f1f1f !important;
+    padding: 24px;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+.contact-box p, .contact-box h3, .contact-box strong {
+    color: #1f1f1f !important;
 }
 
 .badge {
@@ -102,35 +130,49 @@ h1, h2, h3, h4 {
     margin: 6px 8px 6px 0;
     border-radius: 999px;
     background-color: #E4E0D7;
-    color: #0B3D2E;
+    color: #0B3D2E !important;
     font-weight: 600;
     font-size: 0.95rem;
 }
 
-.contact-box {
-    background-color: white;
-    padding: 24px;
-    border-radius: 18px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+/* Inputs */
+.stTextInput input, .stTextArea textarea {
+    background-color: #FFFFFF !important;
+    color: #1f1f1f !important;
+    border-radius: 10px;
 }
 
-hr {
+/* Buttons */
+.stButton > button {
+    background-color: #0B3D2E;
+    color: #F5F1E8 !important;
+    border-radius: 10px;
     border: none;
-    height: 1px;
-    background: #d7d1c6;
-    margin: 28px 0;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+}
+.stButton > button:hover {
+    background-color: #14523f;
+    color: #F5F1E8 !important;
+}
+
+/* Download button */
+.stDownloadButton > button {
+    background-color: #0B3D2E;
+    color: #F5F1E8 !important;
+    border-radius: 10px;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
 }
 </style>
 """, unsafe_allow_html=True)
 
 # -------------------------
-# SIDEBAR NAV
+# SIDEBAR
 # -------------------------
 st.sidebar.markdown("## Navigation")
-page = st.sidebar.radio(
-    "",
-    ["Home", "About Me", "Portfolio", "Resume", "Contact"]
-)
+page = st.sidebar.radio("", ["Home", "About Me", "Portfolio", "Resume", "Contact"])
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Easton Brand")
@@ -147,7 +189,7 @@ if page == "Home":
     <div class="hero-box">
         <h1>Easton Brand</h1>
         <h3>PGA Golf Management Student | Golf Instructor | Future Club Professional</h3>
-        <p class="tagline">
+        <p>
             Building meaningful connections through golf, service, leadership, and a passion for helping others improve their game.
         </p>
     </div>
@@ -324,24 +366,38 @@ elif page == "Resume":
 
     st.markdown("""
     <div class="info-card">
+        <h3>Resume Preview</h3>
         <p>
-            My resume highlights my golf industry experience, customer service background, leadership roles, and academic achievements.
-            You can download it below.
+            You can view my resume below and download a copy as well.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
     try:
-        with open("resume.pdf", "rb") as file:
-            st.download_button(
-                label="Download Resume",
-                data=file,
-                file_name="Easton_Brand_Resume.pdf",
-                mime="application/pdf"
-            )
-        st.success("Resume file loaded successfully.")
+        with open("resume.pdf", "rb") as pdf_file:
+            pdf_bytes = pdf_file.read()
+
+        base64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
+        pdf_display = f'''
+        <iframe 
+            src="data:application/pdf;base64,{base64_pdf}" 
+            width="100%" 
+            height="900" 
+            type="application/pdf"
+            style="border: 1px solid #ccc; border-radius: 12px;">
+        </iframe>
+        '''
+        st.markdown(pdf_display, unsafe_allow_html=True)
+
+        st.download_button(
+            label="Download Resume",
+            data=pdf_bytes,
+            file_name="Easton_Brand_Resume.pdf",
+            mime="application/pdf"
+        )
+
     except FileNotFoundError:
-        st.warning("Upload your resume PDF to the GitHub project and name it exactly: resume.pdf")
+        st.warning("Upload your resume PDF to GitHub and name it exactly: resume.pdf")
 
 # -------------------------
 # CONTACT
