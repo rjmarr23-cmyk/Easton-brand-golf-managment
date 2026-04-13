@@ -338,7 +338,7 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-   st.markdown('<div class="info-card">', unsafe_allow_html=True)
+st.markdown('<div class="info-card">', unsafe_allow_html=True)
 
 st.subheader("Additional Professional Experience")
 
