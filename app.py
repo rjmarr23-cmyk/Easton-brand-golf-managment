@@ -14,9 +14,9 @@ st.set_page_config(
 # -------------------------
 # LOAD IMAGES
 # -------------------------
-mountain_img = Image.open("images/mountain.jpg")
-kids_golf_img = Image.open("images/kids_golf.jpg")
-family_img = Image.open("images/family.jpg")
+mountain_img = Image.open("IMG_5119.JPG")
+kids_golf_img = Image.open("IMG_5120.JPG")
+family_img = Image.open("IMG_5121.JPG")
 
 # -------------------------
 # BUILT-IN EB GOLF LOGO
