@@ -24,10 +24,13 @@ family_img = Image.open("IMG_5121.JPG")
 logo_svg = """
 <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
 
+  <!-- Background -->
   <rect width="240" height="240" rx="34" fill="#0B3D2E"/>
 
+  <!-- Circle (bigger) -->
   <circle cx="120" cy="105" r="85" fill="none" stroke="#FFFFFF" stroke-width="6"/>
 
+  <!-- B (white) -->
   <path d="M85 70 H130 
            Q155 70 155 95 
            Q155 115 130 120 
@@ -40,6 +43,7 @@ logo_svg = """
         stroke-linecap="round"
         stroke-linejoin="round"/>
 
+  <!-- E (moved slightly right) -->
   <path d="M85 70 V165
            M85 70 H140
            M85 118 H130
@@ -49,12 +53,16 @@ logo_svg = """
         stroke-width="10"
         stroke-linecap="round"/>
 
+  <!-- Flag pole -->
   <path d="M175 55 V130" stroke="#FFFFFF" stroke-width="4"/>
 
+  <!-- Flag -->
   <path d="M175 55 L190 65 L175 75 Z" fill="#E63946"/>
 
+  <!-- Ball -->
   <circle cx="175" cy="145" r="5" fill="#000000" stroke="#FFFFFF" stroke-width="2"/>
 
+  <!-- Text -->
   <text x="120" y="210" text-anchor="middle"
         font-size="16"
         font-family="Georgia, serif"
@@ -175,6 +183,7 @@ section[data-testid="stSidebar"] * {
 
 .resume-top h2, .resume-top h3, .resume-top p {
     color: #F5F1E8 !important;
+    margin-bottom: 0.35rem;
 }
 
 .contact-box {
@@ -236,7 +245,6 @@ if page == "Home":
             <h3>Unique Value Proposition</h3>
             <p>
                 I bring a hardworking attitude, a personable presence, and the ability to connect with people from all backgrounds.
-                My experience in golf operations, instruction, hospitality, and leadership allows me to create positive experiences.
             </p>
         </div>
         """, unsafe_allow_html=True)
@@ -249,7 +257,6 @@ if page == "Home":
             <div class="badge">Reliable</div>
             <div class="badge">Leadership</div>
             <div class="badge">Golf Instruction</div>
-            <div class="badge">Hospitality</div>
             <div class="badge">Communication</div>
         </div>
         """, unsafe_allow_html=True)
@@ -266,13 +273,16 @@ elif page == "About Me":
     st.markdown("""
     <div class="info-card">
         My name is Easton, and I am a 21-year-old from Cairo, Nebraska.
-        I am currently part of the PGA Golf Management program at the University of Nebraska–Lincoln.
-        Golf has always been a major part of my life and I have developed a strong passion for teaching
-        the golf swing and helping people enjoy the game.
+        I currently attend the University of Nebraska–Lincoln in the PGA Golf Management program.
+        Golf has always been a major part of my life and I enjoy helping others improve their game.
     </div>
     """, unsafe_allow_html=True)
 
-    st.image(family_img, caption="Family & Husker Football", use_container_width=True)
+    st.image(
+        family_img,
+        caption="Family & Husker Football",
+        use_container_width=True
+    )
 
     st.markdown("""
     <div class="small-card">
@@ -300,7 +310,11 @@ elif page == "Portfolio":
     </div>
     """, unsafe_allow_html=True)
 
-    st.image(kids_golf_img, caption="Youth Golf Leadership Experience", use_container_width=True)
+    st.image(
+        kids_golf_img,
+        caption="Youth Golf Leadership Experience",
+        use_container_width=True
+    )
 
     st.markdown("""
     <div class="job-card">
